@@ -1,6 +1,6 @@
 package com.hippotech.api.controllers;
 
-import com.hippotech.api.data.BlogAnalyticsRepository;
+import com.hippotech.api.data.BlogAnalyticsRepository2;
 import com.hippotech.api.data.BlogRepository;
 import com.hippotech.api.data.BlogSubscriberRepository;
 import com.hippotech.api.data.FraudCheckRepository;

@@ -1,6 +1,6 @@
 package com.hippotech.api.controllers;
 
-import com.hippotech.api.data.BlogAnalyticsRepository;
+import com.hippotech.api.data.BlogAnalyticsRepository2;
 import com.hippotech.api.data.BlogRepository;
 import com.hippotech.api.data.BlogSubscriberRepository;
 import com.hippotech.api.model.BlogPost;
@@ -89,7 +89,7 @@ public class BlogController {
       } catch (Exception e) {
           log.error(e.toString());
       }
-        BlogAnalyticsRepository blogAnalyticsRepository = new BlogAnalyticsRepository(log);
+        BlogAnalyticsRepository2 blogAnalyticsRepository = new BlogAnalyticsRepository2(log);
         blogAnalyticsRepository.addSubscriberToBlogStatQueue(blogSubscriber.getEmail());
 
         return new ResponseEntity(HttpStatus.CREATED);
