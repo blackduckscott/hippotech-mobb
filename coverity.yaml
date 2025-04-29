@@ -1,0 +1,9 @@
+capture:
+  build:
+    clean-command: mvn -B clean
+    build-command: mvn -B -DskipTests clean package
+# analyze:
+#   checkers:
+#     webapp-security:
+#       enabled: true
+    
