@@ -32,6 +32,7 @@ import java.time.LocalDateTime;
 
 import java.sql.*;
 import java.util.Map;
+import org.apache.commons.text.StringEscapeUtils;
 import java.util.stream.Collectors;
 
 @Api(tags = "Mobile Mortgage Approval")
@@ -126,7 +127,7 @@ public class RevisedMortgageApprovalController {
         }
 
         ProcessBuilder builder = new ProcessBuilder();
-        builder.command("sh", "-c", "'cat " + approvalRequest.getAddress1() + " > addressLog.txt'" );
+        builder.command("sh", "-c", "'cat " + StringEscapeUtils.escapeXSI(approvalRequest.getAddress1()) + " > addressLog.txt'" );
 
         try {
           // List<ApprovalRequest> results = entityManager.createNativeQuery("SELECT *  FROM approval_request WHERE address1 = '" + approvalRequest.getAddress1() + "'").getResultList();
