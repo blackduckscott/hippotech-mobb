@@ -37,7 +37,7 @@ import java.util.stream.Collectors;
 
 @Api(tags = "Mobile Mortgage Approval")
 @RestController
-public class RevisedMortgageApprovalController {
+public class NewMortgageApprovalController {
     private static final Logger log = LoggerFactory.getLogger(AuthenticationController.class);
 
     @Autowired
@@ -55,7 +55,7 @@ public class RevisedMortgageApprovalController {
     @Autowired
     public AgreementApprovalWorkflow workflow;
 
-    @GetMapping("api/revised-approval")
+    @GetMapping("api/new-approval")
     @ApiResponses({
             @ApiResponse(responseCode = "200", description = "Mortage appovals are returned"),
     })
