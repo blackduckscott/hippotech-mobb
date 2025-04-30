@@ -43,10 +43,17 @@ jobs:
         uses: github/codeql-action/autobuild@v2
 
       - name: Perform CodeQL analysis
+        id: analyze
         uses: github/codeql-action/analyze@v2
         with:
           category: "/language:${{ matrix.language }}"
           output: results
+
+      - name: Upload SARIF file
+        uses: actions/upload-artifact@v3
+        with:
+          name: codeql-sarif
+          path: ${{ steps.analyze.outputs.sarif-output }}
 
       - name: Run Mobb on the findings and get fixes
         if: always()
