@@ -49,12 +49,6 @@ jobs:
           category: "/language:${{ matrix.language }}"
           output: results
 
-      - name: Upload SARIF file
-        uses: actions/upload-artifact@v3
-        with:
-          name: codeql-sarif
-          path: ${{ steps.analyze.outputs.sarif-output }}
-
       - name: Run Mobb on the findings and get fixes
         if: always()
         uses: mobb-dev/action/review@v1.1

@@ -28,8 +28,7 @@ public class BlogPost {
     }
 
     public long getId() {
-        long newId = id;
-        return newId;
+        return id;
     }
 
     public String getDescription() {
